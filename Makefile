@@ -1,7 +1,7 @@
 CC := gcc
-CPPFLAGS = -MMD -MP
+CPPFLAGS := -MMD -MP `sdl2-config --cflags`
 CFLAGS := -Wall 
-LDFLAGS :=
+LDFLAGS := `sdl2-config --libs`
 EXE := test
 SRC_DIR := src
 OBJ_DIR := obj
