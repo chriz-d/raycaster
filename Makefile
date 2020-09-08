@@ -1,7 +1,7 @@
 CC := gcc
 CPPFLAGS := -MMD -MP `sdl2-config --cflags`
 CFLAGS := -Wall 
-LDFLAGS := `sdl2-config --libs`
+LDFLAGS := `sdl2-config --libs` -lm
 EXE := raycaster
 SRC_DIR := src
 OBJ_DIR := obj
