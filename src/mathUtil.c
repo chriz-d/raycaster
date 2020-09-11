@@ -16,6 +16,6 @@ float addAngle(float angle, float rotationVal) {
 }
 
 float tanDeg(double val) {
-    float result = tan(val);
-    return result * 180 / M_PI;
+    float result = val * M_PI/ 180.0;
+    return tan(result);
 }
