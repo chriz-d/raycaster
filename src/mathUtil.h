@@ -3,5 +3,6 @@
 
 float addAngle(float, float);
 float tanDeg(double);
+float cosDeg(double);
 
 #endif

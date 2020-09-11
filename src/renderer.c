@@ -67,7 +67,7 @@ void render(float angle) {
     float currentRayAngle = angle;
     currentRayAngle = addAngle(currentRayAngle, -1 * (FOV / 2));
     for(int i = 0; i < WINDOW_WIDTH; i++) {
-        float distance = shootRay(currentRayAngle);
+        float distance = shootRay(currentRayAngle) * cosDeg(angle - currentRayAngle);
         float projectedWallHeight = ((float)WALL_SIZE / distance) * PROJ_PLANE_DISTANCE;
         // draw stuff
         //printf("%f\n", distance);

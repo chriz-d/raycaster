@@ -19,3 +19,8 @@ float tanDeg(double val) {
     float result = val * M_PI/ 180.0;
     return tan(result);
 }
+
+float cosDeg(double val) {
+    float result = val * M_PI/ 180.0;
+    return cos(result);
+}
