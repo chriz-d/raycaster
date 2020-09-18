@@ -1,9 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-float xPos = 3.5;
-float yPos = 3.5;
+float player_getXPos(void);
+float player_getYPos(void);
+float player_getRotation(void);
 
-float angle = 180;
+void player_setXPos(float);
+void player_setYPos(float);
+void player_setRotation(float);
 
 #endif

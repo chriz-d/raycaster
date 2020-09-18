@@ -24,3 +24,8 @@ float cosDeg(double val) {
     float result = val * M_PI/ 180.0;
     return cos(result);
 }
+
+float sinDeg(double val) {
+    float result = val * M_PI/ 180.0;
+    return sin(result);
+}

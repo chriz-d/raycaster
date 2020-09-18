@@ -3,7 +3,6 @@
 
 void initSDL(void);
 void quitSDL(void);
-void render(float);
-
+void render(void);
 
 #endif
