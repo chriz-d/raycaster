@@ -16,6 +16,10 @@ void processInputs(int *running) {
                         player_setXPos(player_getXPos() + player_getXPos() * sinDeg(player_getRotation()) * 0.01);
                         player_setYPos(player_getYPos() - player_getYPos() * cosDeg(player_getRotation()) * 0.01);
                     }  break;
+                    case SDLK_s: {
+                        player_setXPos(player_getXPos() - player_getXPos() * sinDeg(player_getRotation()) * 0.01);
+                        player_setYPos(player_getYPos() + player_getYPos() * cosDeg(player_getRotation()) * 0.01);
+                    }  break;
                     default: break;
                 }
             }

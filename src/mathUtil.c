@@ -15,17 +15,17 @@ float addAngle(float angle, float rotationVal) {
     return angle;
 }
 
-float tanDeg(double val) {
-    float result = val * M_PI/ 180.0;
+float tanDeg(float val) {
+    float result = val * M_PI / 180.0;
     return tan(result);
 }
 
-float cosDeg(double val) {
-    float result = val * M_PI/ 180.0;
+float cosDeg(float val) {
+    float result = val * M_PI / 180.0;
     return cos(result);
 }
 
-float sinDeg(double val) {
-    float result = val * M_PI/ 180.0;
+float sinDeg(float val) {
+    float result = val * M_PI / 180.0;
     return sin(result);
 }

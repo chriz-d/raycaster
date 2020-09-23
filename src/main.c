@@ -6,12 +6,12 @@
 #include "input.h"
 
 
-int main(int argc, char* args[]) {;
+int main(int argc, char* args[]) {
     initSDL();
-    player_setXPos(6.5);
-    player_setYPos(3.5);
-    player_setRotation(0);
-
+    player_setXPos(2.5);
+    player_setYPos(2.5);
+    player_setRotation(270);
+    
     int running = 1;
     while(running) {
         render();

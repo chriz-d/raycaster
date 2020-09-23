@@ -2,8 +2,8 @@
 #define MATHUTIL_H
 
 float addAngle(float, float);
-float tanDeg(double);
-float cosDeg(double);
-float sinDeg(double);
+float tanDeg(float);
+float cosDeg(float);
+float sinDeg(float);
 
 #endif
