@@ -12,10 +12,12 @@ int main(int argc, char* args[]) {
     player_setYPos(2.5);
     player_setRotation(270);
     
+    int frames = 0;
     int running = 1;
     while(running) {
         render();
         processInputs(&running);
+        frames++;
     }
     return 0;
 }

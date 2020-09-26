@@ -13,12 +13,14 @@
 
 static SDL_Window* window = NULL;
 static SDL_Renderer* renderer = NULL;
+static int framesInSecond = 0;
 
 float shootRay(float);
 float getHorizIntersectDist(float);
 float getVertIntersectDist(float);
 int isOutOfBounds(int, int);
 SDL_Window* getWindow(void);
+unsigned int updateFPS(unsigned int, void*);
 
 int map[8][8] = {
     {1, 1, 1, 1, 1, 1, 1, 1},
@@ -32,13 +34,14 @@ int map[8][8] = {
 };
 
 void initSDL() {
-    if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
         printf("Error init Video module, %s\n", SDL_GetError());
     } else {
         window = SDL_CreateWindow("Raycaster", SDL_WINDOWPOS_UNDEFINED, 
             SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
     }
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    SDL_AddTimer(1000, updateFPS, NULL);
 }
 
 void quitSDL() {
@@ -65,6 +68,7 @@ void render() {
         currentRayAngle = addAngle(currentRayAngle, DEGREE_PER_RAY);
     }
     SDL_RenderPresent(renderer);
+    framesInSecond++;
     printf("%s", SDL_GetError());
 }
 
@@ -159,4 +163,13 @@ SDL_Window* getWindow() {
 
 SDL_Surface* getSurface() {
     return SDL_GetWindowSurface(window);
+}
+
+unsigned int updateFPS(unsigned int interval, void* param) {
+    char fps[16];
+    sprintf(fps, "FPS: %d", framesInSecond);
+    SDL_SetWindowTitle(window, fps);
+    framesInSecond = 0;
+    SDL_AddTimer(interval, updateFPS, NULL);
+    return 0;
 }
